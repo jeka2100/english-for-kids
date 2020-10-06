@@ -1,0 +1,62 @@
+.cards-list {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  padding: 0 30px;
+}
+
+.cards-list__rating-zone {
+  width: 100%;
+  height: 40px;
+  display: flex;
+  overflow: hidden;
+}
+
+.star-error, .star-correct {
+  flex-shrink: 0;
+  width: 40px;
+  min-width: 40px;
+  height: 40px;
+  background-size: 40px 40px;
+}
+
+.star-error {
+  background-image: url(../img/sitedecor/star.svg);
+}
+
+.star-correct {
+  background-image: url(../img/sitedecor/star-win.svg);
+}
+
+.cards-list__success, .cards-list__failure {
+  width: 100%;
+  background-repeat: no-repeat;
+  background-position: center;
+}
+
+.cards-list__success {
+  height: 385px;
+}
+
+.cards-list__failure {
+  height: 500px;
+}
+
+.cards-list__success {
+  background-image: url(../img/sitedecor/success.png);
+  background-size: 30%;
+}
+
+.cards-list__failure {
+  background-image: url(../img/sitedecor/failure.png);
+  background-size: 30%;
+}
+
+.result__mistakes {
+  text-align: center;
+  font-size: 2rem;
+  font-style: normal;
+  font-weight: bold;
+  line-height: 2rem;
+  color: red;
+}

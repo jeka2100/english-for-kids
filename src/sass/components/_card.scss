@@ -1,0 +1,129 @@
+.card {
+  width: 300px;
+  height: 300px;
+  background-color: $second-color;
+  margin: 30px;
+  border-radius: 10px;
+  cursor: pointer;
+  box-shadow: 0 0 5px 2px rgba(0,0,0,0.5);
+  @include transition (0.2s ease-in-out);
+  &:hover {
+    box-shadow: 0 0 0 2px #ffffff, 0 0 0 4px $color-primary;
+  }
+  &.play {
+    background-color: $color-play;
+  }
+  @include media-mobile-small {
+    width: 250px;
+    height: 225px;
+  }
+}
+
+.card__name {
+  text-align: center;
+  @include font ($size: 2rem);
+}
+
+.card__image {
+  display: block;
+  margin: auto;
+  width: 200px;
+  height: 200px;
+  border: white solid 5px;
+  border-radius: 50%;
+  object-fit: cover;
+  @include media-mobile-small {
+    width: 150px;
+    height: 150px;
+  }
+}
+
+.category-card {
+  position: relative;
+  width: 300px;
+  height: 250px;
+  margin: 30px;
+  cursor: pointer;
+  perspective: 500px;
+  &.inactive {
+    & > * {
+      &:hover {
+        box-shadow: 0 0 5px 2px rgba(0, 0, 0, 0.5);
+      }
+    }
+    cursor: not-allowed;
+    img {
+      filter: contrast(0.5);
+    }
+  }
+  @include media-mobile-small {
+    height: 180px;
+  }
+}
+
+.category-card_front, .category-card_back {
+  backface-visibility: hidden;
+  position: absolute;
+  box-shadow: 0 0 5px 2px rgba(0,0,0,0.5);
+  background-color: $second-color;
+  overflow: hidden;
+  height: 100%;
+  border-radius: 10px;
+  transform-style: preserve-3d;  
+  @include transition (0.5s ease-in-out);
+  &:hover {
+    box-shadow: 0 0 0 2px #ffffff, 0 0 0 4px $color-primary;
+  }
+  &.play {
+    img {
+      height: 100%;
+    }
+  }
+}
+
+.category-card_back {
+  @include transform(rotateY(180deg));
+  &.rotate {
+    @include transform (rotateY(0));
+  }
+}  
+
+.category-card_front {
+  &.rotate {
+    @include transform (rotateY(180deg));
+  }
+}
+
+.category-card__image {
+  display: block;
+  margin: auto;
+  width: 100%;
+  object-fit: cover;
+  &.play {
+    height: 100%;
+  }
+}
+
+.category-card__name {
+  margin: 13px 0;
+  text-align: center;
+  @include font ($size: 2rem);
+}
+
+.category-card__rotate {
+  position: absolute;
+  backface-visibility: hidden;
+  width: 50px;
+  bottom: 0;
+  right: 5px;
+  @include transition (0.3s ease-in-out);
+  &:hover {
+    filter: invert(1);
+  }
+  &.rotate {
+    @include transform (rotateY(180deg));
+  }
+  &.play {
+    display: none;
+  }
+}

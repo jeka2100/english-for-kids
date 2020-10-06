@@ -1,0 +1,11 @@
+html {
+  font-size: 10px;
+  @extend %font;
+}
+
+body {
+  background-color: $color-background;
+  &.overflow-hidden {
+    overflow: hidden;
+  }
+}
