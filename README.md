@@ -8,6 +8,9 @@ In the game mode, a word is played, and the child needs to guess the word.
 
 Demo: <https://jeka2100-english-for-kids.netlify.app/>
 
+Screenshot:
+![image](https://user-images.githubusercontent.com/40537662/95206568-e843b500-07f7-11eb-9c7e-4db1355b1cc3.png)
+
 This project used:
 
 1. JavaScript ES6
